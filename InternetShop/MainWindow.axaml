@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		Width="800" Height="450"
+        x:Class="InternetShop.MainWindow"
+        Title="InternetShop">
+	<DockPanel>
+		<StackPanel>
+			<StackPanel Orientation="Vertical" DockPanel.Dock="Top">
+				<TextBlock TextAlignment="Center" FontSize="25" Margin="0,20,0,70" Text="Добро пожаловать в наш Интернет Магазин"/>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+				<TextBlock Text="Войдите в аккаунт" FontSize="20" Padding="20"/>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+				<TextBlock Text="Введите имя" Width="200" />
+				<TextBox x:Name="usernameBox" Margin="0,0,0,10"/>
+				<TextBlock Text="Введите пароль"/>
+				<TextBox x:Name="passwordBox"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,80,0,0" HorizontalAlignment="Center">
+				<Button Content="Регистрация" Margin="0,0,25,0" />
+				<Button Content="Войти" x:Name="Enter" Click="EnterButton"/>
+			</StackPanel>
+		</StackPanel>
+	</DockPanel>
+</Window>
