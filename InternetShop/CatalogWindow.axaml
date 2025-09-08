@@ -2,9 +2,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-		Width="800"
-		Height="450"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
+		Width="900"
+		Height="500"
         x:Class="InternetShop.CatalogWindow"
 		x:CompileBindings="False"
         Title="CatalogWindow">
@@ -12,14 +12,15 @@
 		<StackPanel Orientation="Vertical">
 			<TextBlock Text="Каталог" TextAlignment="Center" FontSize="25" Margin="0,10,0,0" />
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-				<TextBox Width="200" Watermark="Поиск"/>
+				<TextBox Width="275" Watermark="Поиск" x:Name="a"/>
 				<ComboBox PlaceholderText="По алфавиту" x:Name="comboSortName" Width="150" Margin="20,0,0,0"/>
 				<ComboBox PlaceholderText="По цене" x:Name="comboSortCost" Width="150" Margin="20,0,0,0"/>
 				<Button Height="32" Margin="20,0,0,0" Content="Сбросить фильтры"/>
+				<Button Height="32" Margin="20,0,0,0" Content="Корзина"/>
 			</StackPanel>
 			<ScrollViewer>
 				<StackPanel Margin="0,10,0,0">
-					<ListBox x:Name="CatalogProducts" ItemsSource="Products" Height="400">
+					<ListBox x:Name="CatalogProducts" ItemsSource="Products" Height="407">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
 							<Border BorderThickness="1" Padding="1" BorderBrush="Black" CornerRadius="5">
@@ -29,6 +30,8 @@
 									<TextBlock Text="{Binding ProductName}" FontSize="20" FontWeight="Bold"/>
 									<TextBlock Text="{Binding Cost, StringFormat='Цена: {0:C}'}" FontSize="18"/>
 									<TextBlock Text="{Binding ProductCaption}" FontSize="17"/>
+									<Button Click="AddToCart"
+              Tag="{Binding ProductId}" Content="Добавить в корзину" IsEnabled="True"/>
 								</StackPanel>
 							</StackPanel>
 							</Border>

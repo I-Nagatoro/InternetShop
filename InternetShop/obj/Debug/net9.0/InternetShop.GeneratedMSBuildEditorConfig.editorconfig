@@ -32,6 +32,9 @@ build_property.EnableCodeStyleSeverity =
 [C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/BasketWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/CatalogWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
