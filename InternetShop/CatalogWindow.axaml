@@ -16,28 +16,44 @@
 				<ComboBox PlaceholderText="По алфавиту" x:Name="comboSortName" Width="150" Margin="20,0,0,0"/>
 				<ComboBox PlaceholderText="По цене" x:Name="comboSortCost" Width="150" Margin="20,0,0,0"/>
 				<Button Height="32" Margin="20,0,0,0" Content="Сбросить фильтры"/>
-				<Button Height="32" Margin="20,0,0,0" Content="Корзина"/>
+				<Button Height="32" Margin="20,0,0,0" Content="Корзина" Click="BasketOpen_Click"/>
 			</StackPanel>
 			<ScrollViewer>
 				<StackPanel Margin="0,10,0,0">
-					<ListBox x:Name="CatalogProducts" ItemsSource="Products" Height="407">
-					<ListBox.ItemTemplate>
-						<DataTemplate>
-							<Border BorderThickness="1" Padding="1" BorderBrush="Black" CornerRadius="5">
-							<StackPanel Orientation="Horizontal" Spacing="10">
-							<Image Width="100" Height="100" Source="{Binding ParseImage}"/>
-								<StackPanel>
-									<TextBlock Text="{Binding ProductName}" FontSize="20" FontWeight="Bold"/>
-									<TextBlock Text="{Binding Cost, StringFormat='Цена: {0:C}'}" FontSize="18"/>
-									<TextBlock Text="{Binding ProductCaption}" FontSize="17"/>
-									<Button Click="AddToCart"
-              Tag="{Binding ProductId}" Content="Добавить в корзину" IsEnabled="True"/>
-								</StackPanel>
-							</StackPanel>
-							</Border>
-						</DataTemplate>
-					</ListBox.ItemTemplate>
-				</ListBox>
+					<ListBox x:Name="CatalogProducts" ItemsSource="{Binding Products}" Height="407">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<Border BorderThickness="1" Padding="1" BorderBrush="Black" CornerRadius="5">
+									<StackPanel Orientation="Horizontal" Spacing="10">
+										<Image Width="100" Height="100" Source="{Binding ParseImage}"/>
+										<StackPanel>
+											<TextBlock Text="{Binding ProductName}" FontSize="20" FontWeight="Bold"/>
+											<TextBlock Text="{Binding Cost, StringFormat='Цена: {0:C}'}" FontSize="18"/>
+											<TextBlock Text="{Binding ProductCaption}" FontSize="17"/>
+											<Button Click="AddToCart"
+													Tag="{Binding ProductId}"
+													Content="Добавить в корзину"
+													IsEnabled="True"/>
+											<StackPanel Orientation="Horizontal"
+													  IsVisible="False"
+													  Tag="{Binding ProductId}">
+												<Button Click="DecreaseQuantity"
+													   Tag="{Binding ProductId}"
+													   Content="-"/>
+												<TextBlock Padding="10"
+														  Text="1"
+														  VerticalAlignment="Center"
+														  Tag="{Binding ProductId}"/>
+												<Button Click="IncreaseQuantity"
+													   Tag="{Binding ProductId}"
+													   Content="+"/>
+											</StackPanel>
+										</StackPanel>
+									</StackPanel>
+								</Border>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
 			</StackPanel>
 			</ScrollViewer>
 		</StackPanel>

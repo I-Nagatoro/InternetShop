@@ -4,11 +4,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="InternetShop.BasketWindow"
+		x:CompileBindings="False"
         Title="BasketWindow">
 	<DockPanel>
 		<StackPanel Orientation="Vertical">
 			<TextBlock Text="Корзина" HorizontalAlignment="Center" FontSize="25" Margin="0,10,0,0"/>
-			<ListBox>
+			<ListBox x:Name="BasketList" Height="407">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
 						<StackPanel>
