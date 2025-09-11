@@ -26,7 +26,7 @@ namespace InternetShop
                 var user = context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
                 if (user != null)
                 {
-                    var catalogWindow = new CatalogWindow(user.Username, user.UserId);
+                    var catalogWindow = new CatalogWindow(user.UserId);
                     catalogWindow.Show();
                     Close();
                 }

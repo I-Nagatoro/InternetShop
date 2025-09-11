@@ -20,32 +20,32 @@
 			</StackPanel>
 			<ScrollViewer>
 				<StackPanel Margin="0,10,0,0">
-					<ListBox x:Name="CatalogProducts" ItemsSource="{Binding Products}" Height="407">
+					<ListBox x:Name="CatalogProducts" Height="407">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
 								<Border BorderThickness="1" Padding="1" BorderBrush="Black" CornerRadius="5">
 									<StackPanel Orientation="Horizontal" Spacing="10">
-										<Image Width="100" Height="100" Source="{Binding ParseImage}"/>
+										<Image Width="100" Height="100" Source="{Binding Product.ParseImage}"/>
 										<StackPanel>
-											<TextBlock Text="{Binding ProductName}" FontSize="20" FontWeight="Bold"/>
-											<TextBlock Text="{Binding Cost, StringFormat='Цена: {0:C}'}" FontSize="18"/>
-											<TextBlock Text="{Binding ProductCaption}" FontSize="17"/>
+											<TextBlock Text="{Binding Product.ProductName}" FontSize="20" FontWeight="Bold"/>
+											<TextBlock Text="{Binding Product.Cost, StringFormat='Цена: {0:C}'}" FontSize="18"/>
+											<TextBlock Text="{Binding Product.ProductCaption}" FontSize="17"/>
+
 											<Button Click="AddToCart"
-													Tag="{Binding ProductId}"
-													Content="Добавить в корзину"
-													IsEnabled="True"/>
+											Tag="{Binding Product.ProductId}"
+											Content="Добавить в корзину"
+											IsVisible="{Binding !IsInBasket}"/>
+
 											<StackPanel Orientation="Horizontal"
-													  IsVisible="False"
-													  Tag="{Binding ProductId}">
+													   IsVisible="{Binding IsInBasket}">
 												<Button Click="DecreaseQuantity"
-													   Tag="{Binding ProductId}"
+													   Tag="{Binding Product.ProductId}"
 													   Content="-"/>
 												<TextBlock Padding="10"
-														  Text="1"
-														  VerticalAlignment="Center"
-														  Tag="{Binding ProductId}"/>
+														  Text="{Binding Quantity}"
+														  VerticalAlignment="Center"/>
 												<Button Click="IncreaseQuantity"
-													   Tag="{Binding ProductId}"
+													   Tag="{Binding Product.ProductId}"
 													   Content="+"/>
 											</StackPanel>
 										</StackPanel>
@@ -54,7 +54,7 @@
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>
-			</StackPanel>
+				</StackPanel>
 			</ScrollViewer>
 		</StackPanel>
 	</DockPanel>

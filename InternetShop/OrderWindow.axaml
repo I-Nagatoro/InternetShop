@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="InternetShop.OrderWindow"
+        Title="OrderWindow">
+	<DockPanel>
+		<StackPanel Orientation="Vertical">
+			<TextBlock Text="Оформление заказа" HorizontalAlignment="Center" FontSize="27"/>
+			<TextBlock Text="Данные о заказе:" Padding="10" FontSize="20"/>
+			<StackPanel Margin="10,5,0,0">
+				<TextBlock Text="Имя пользователя:" FontSize="15"/>
+				<TextBlock Text="Продукция в заказе:" FontSize="15"/>
+				<ListBox>
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel>
+								<TextBlock/>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+				<TextBlock Text="Имя пользователя:" FontSize="15"/>
+				<TextBlock Text="Имя пользователя:" FontSize="15"/>
+				<TextBlock Text="Имя пользователя:" FontSize="15"/>
+			</StackPanel>
+		</StackPanel>
+	</DockPanel>
+</Window>

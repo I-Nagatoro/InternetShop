@@ -2,32 +2,54 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
+		MinHeight="300"
+		MaxHeight="700"
+		SizeToContent="Height"
+		Width="800"
         x:Class="InternetShop.BasketWindow"
 		x:CompileBindings="False"
         Title="BasketWindow">
 	<DockPanel>
 		<StackPanel Orientation="Vertical">
 			<TextBlock Text="Корзина" HorizontalAlignment="Center" FontSize="25" Margin="0,10,0,0"/>
-			<ListBox x:Name="BasketList" Height="407">
+			<ListBox x:Name="BasketList" MaxHeight="380">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						<StackPanel>
-							<Image Width="100" Height="100" Source="{Binding ImagePath}"/>
-							<StackPanel Orientation="Horizontal">
-							<StackPanel>
+						<Border BorderThickness="1" BorderBrush="Black" CornerRadius="5" Padding="1">
+						<StackPanel Orientation="Horizontal">
+							<Image HorizontalAlignment="Left" Width="100" Height="100" Source="{Binding ParseImage}"/>
+							<StackPanel Orientation="Vertical">
+							<StackPanel Orientation="Vertical">
 								<TextBlock Text="{Binding ProductName}" FontSize="20" FontWeight="Bold"/>
-								<TextBlock Text="{Binding Cost, StringFormat='Цена: {0:C}'}" FontSize="18"/>
-								<TextBlock Text="{Binding ProductCaption}" FontSize="17"/>
+								<TextBlock Text="{Binding Price, StringFormat='Цена: {0:C}'}" FontSize="18"/>
+								<TextBlock Text="{Binding Caption}" FontSize="17"/>
 							</StackPanel>
-								<Button Content="-"/>
-								<TextBlock Text="{Binding Count}"/>
-								<Button Content="+"/>
+								<StackPanel Orientation="Horizontal">
+									<Button Click="DecreaseQuantity"
+										   Tag="{Binding ProductId}"
+										   Content="-"/>
+									<TextBlock Padding="10"
+											  Text="{Binding Count}"
+											  VerticalAlignment="Center"/>
+									<Button Click="IncreaseQuantity"
+										   Tag="{Binding ProductId}"
+										   Content="+"/>
+								</StackPanel>
 							</StackPanel>
 						</StackPanel>
+						</Border>
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Margin="0,5,0,0" Text="Общая стоимость корзины: "/>
+				<TextBlock Margin="0,5,0,0" x:Name="sumprice" Text=""/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<Button Content="Назад" Click="Back" Margin="5" />
+				<Button Content="Оформить заказ" Click="OrderDone" Margin="5"/>
+			</StackPanel>
 		</StackPanel>
 	</DockPanel>
 </Window>

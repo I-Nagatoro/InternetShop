@@ -4,49 +4,92 @@ using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using InternetShop.Models;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
 namespace InternetShop;
 
 public partial class CatalogWindow : Window
 {
-    public ICommand newCommand { get; }
     public int Basket_id;
     public int user_id;
+    private ObservableCollection<ProductItem> _productItems;
+
+    public class ProductItem : INotifyPropertyChanged
+    {
+        private int _quantity;
+
+        public Product Product { get; set; }
+
+        public int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                if (_quantity != value)
+                {
+                    _quantity = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(IsInBasket));
+                }
+            }
+        }
+
+        public bool IsInBasket => Quantity > 0;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
     public CatalogWindow()
     {
         InitializeComponent();
     }
 
-    public CatalogWindow(string Username, int UserId)
+    public CatalogWindow(int UserId)
     {
         InitializeComponent();
-        LoadProducts();
-        using var context = new AfanasyevContext();
-        if (context.Baskets.Where(x => x.UserId == UserId).Select(x => x.BasketId) == null)
-        {
-            context.Baskets.Add(new Basket
-            {
-                UserId = UserId,
-            });
-        }
-        Basket_id = context.Baskets.Where(x => x.UserId == UserId).Select(x => x.BasketId).FirstOrDefault();
         user_id = UserId;
+
+        using var context = new AfanasyevContext();
+        var basket = context.Baskets.FirstOrDefault(x => x.UserId == UserId);
+
+        if (basket == null)
+        {
+            basket = new Basket { UserId = UserId };
+            context.Baskets.Add(basket);
+            context.SaveChanges();
+        }
+
+        Basket_id = basket.BasketId;
+        LoadProducts();
     }
 
     public void LoadProducts()
     {
         using var context = new AfanasyevContext();
-        var Products = context.Products.ToList();
-        CatalogProducts.ItemsSource = Products;
-    }
+        var products = context.Products.ToList();
+        var basketProducts = context.BasketProducts
+            .Where(bp => bp.BasketId == Basket_id)
+            .ToDictionary(bp => bp.ProductId, bp => bp.Count);
 
-    public void checkBasket()
-    {
-        using var context = new AfanasyevContext();
-        var Basket = context.Baskets.Where(x=>x.UserId==user_id).Select(x=>x.BasketId);
+        _productItems = new ObservableCollection<ProductItem>(
+            products.Select(p => new ProductItem
+            {
+                Product = p,
+                Quantity = basketProducts.ContainsKey(p.ProductId) ? basketProducts[p.ProductId] : 0
+            })
+        );
+
+        CatalogProducts.ItemsSource = _productItems;
     }
 
     public void AddToCart(object sender, RoutedEventArgs e)
@@ -56,33 +99,30 @@ public partial class CatalogWindow : Window
 
         using var context = new AfanasyevContext();
 
+        var basketProduct = context.BasketProducts
+            .FirstOrDefault(bp => bp.BasketId == Basket_id && bp.ProductId == productId);
 
-        var newId = context.BasketProducts.Any() ? context.BasketProducts.Max(x => x.Id) + 1 : 1;
-        context.BasketProducts.Add(new BasketProduct
+        if (basketProduct == null)
         {
-            Id = newId,
-            ProductId = productId,
-            BasketId = Basket_id,
-            Count = 1
-        });
-        context.SaveChanges();
-
-        var stackPanel = button.Parent as StackPanel;
-        if (stackPanel != null)
-        {
-            var quantityPanel = stackPanel.Children.OfType<StackPanel>()
-                .FirstOrDefault(sp => sp.Orientation == Orientation.Horizontal);
-
-            if (quantityPanel != null)
+            var newId = context.BasketProducts.Any() ? context.BasketProducts.Max(x => x.Id) + 1 : 1;
+            basketProduct = new BasketProduct
             {
-                button.IsVisible = false;
-                quantityPanel.IsVisible = true;
-                var countText = quantityPanel.Children.OfType<TextBlock>().FirstOrDefault();
-                if (countText != null)
-                {
-                    countText.Text = "1";
-                }
-            }
+                Id = newId,
+                ProductId = productId,
+                BasketId = Basket_id,
+                Count = 1
+            };
+            context.BasketProducts.Add(basketProduct);
+        }
+        else
+        {
+            basketProduct.Count++;
+        }
+        context.SaveChanges();
+        var productItem = _productItems.FirstOrDefault(pi => pi.Product.ProductId == productId);
+        if (productItem != null)
+        {
+            productItem.Quantity = basketProduct.Count;
         }
     }
 
@@ -90,21 +130,33 @@ public partial class CatalogWindow : Window
     {
         var button = sender as Button;
         var productId = (int)button.Tag;
+
         using var context = new AfanasyevContext();
-        var quantityPanel = button.Parent as StackPanel;
-        if (quantityPanel != null)
+        var basketProduct = context.BasketProducts
+            .FirstOrDefault(bp => bp.BasketId == Basket_id && bp.ProductId == productId);
+
+        if (basketProduct != null)
         {
-            var countText = quantityPanel.Children.OfType<TextBlock>().FirstOrDefault();
-            if (countText != null && int.TryParse(countText.Text, out int count) && count > 1)
+            if (basketProduct.Count > 1)
             {
-                count--;
-                countText.Text = count.ToString();
-                var basketProduct = context.BasketProducts
-                    .FirstOrDefault(bp => bp.BasketId == Basket_id && bp.ProductId == productId);
-                if (basketProduct != null)
+                basketProduct.Count--;
+                context.SaveChanges();
+
+                var productItem = _productItems.FirstOrDefault(pi => pi.Product.ProductId == productId);
+                if (productItem != null)
                 {
-                    basketProduct.Count = count;
-                    context.SaveChanges();
+                    productItem.Quantity = basketProduct.Count;
+                }
+            }
+            else
+            {
+                context.BasketProducts.Remove(basketProduct);
+                context.SaveChanges();
+
+                var productItem = _productItems.FirstOrDefault(pi => pi.Product.ProductId == productId);
+                if (productItem != null)
+                {
+                    productItem.Quantity = 0;
                 }
             }
         }
@@ -116,32 +168,23 @@ public partial class CatalogWindow : Window
         var productId = (int)button.Tag;
 
         using var context = new AfanasyevContext();
+        var basketProduct = context.BasketProducts
+            .FirstOrDefault(bp => bp.BasketId == Basket_id && bp.ProductId == productId);
 
-        var quantityPanel = button.Parent as StackPanel;
-        if (quantityPanel != null)
+        if (basketProduct != null)
         {
-            var countText = quantityPanel.Children.OfType<TextBlock>().FirstOrDefault();
-            if (countText != null && int.TryParse(countText.Text, out int count))
-            {
-                count++;
-                countText.Text = count.ToString();
+            basketProduct.Count++;
+            context.SaveChanges();
 
-                var basketProduct = context.BasketProducts
-                    .FirstOrDefault(bp => bp.BasketId == Basket_id && bp.ProductId == productId);
-                if (basketProduct != null)
-                {
-                    basketProduct.Count = count;
-                    context.SaveChanges();
-                }
+            var productItem = _productItems.FirstOrDefault(pi => pi.Product.ProductId == productId);
+            if (productItem != null)
+            {
+                productItem.Quantity = basketProduct.Count;
             }
         }
     }
 
-
-
-
-
-    private void BasketOpen_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    private void BasketOpen_Click(object? sender, RoutedEventArgs e)
     {
         var BasketWindow = new BasketWindow(user_id);
         BasketWindow.Show();
