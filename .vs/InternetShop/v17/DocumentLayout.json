@@ -3,68 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\catalogwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\catalogwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\catalogwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\catalogwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\orderwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\orderwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\basketwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\basketwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\basketwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\basketwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\orderwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\orderwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\models\\product_basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\models\\product_basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\errorwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\errorwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\errorwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\errorwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\models\\afanasyevcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\models\\afanasyevcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\models\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\models\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|c:\\users\\demo\\desktop\\demo\\internetshop\\internetshop\\migrations\\afanasyevcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC20245A-4FF1-4E55-8714-414BBF45AF6B}|InternetShop\\InternetShop.csproj|solutionrelative:internetshop\\migrations\\afanasyevcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,198 +22,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\OrderWindow.axaml",
-              "RelativeDocumentMoniker": "InternetShop\\OrderWindow.axaml",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\OrderWindow.axaml",
-              "RelativeToolTip": "InternetShop\\OrderWindow.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-11T09:30:03.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\OrderWindow.axaml.cs",
-              "RelativeDocumentMoniker": "InternetShop\\OrderWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\OrderWindow.axaml.cs",
-              "RelativeToolTip": "InternetShop\\OrderWindow.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T09:30:03.762Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BasketWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\BasketWindow.axaml",
-              "RelativeDocumentMoniker": "InternetShop\\BasketWindow.axaml",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\BasketWindow.axaml",
-              "RelativeToolTip": "InternetShop\\BasketWindow.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-10T07:31:48.11Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BasketWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\BasketWindow.axaml.cs",
-              "RelativeDocumentMoniker": "InternetShop\\BasketWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\BasketWindow.axaml.cs",
-              "RelativeToolTip": "InternetShop\\BasketWindow.axaml.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAIwF0AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T08:47:01.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CatalogWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\CatalogWindow.axaml",
-              "RelativeDocumentMoniker": "InternetShop\\CatalogWindow.axaml",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\CatalogWindow.axaml",
-              "RelativeToolTip": "InternetShop\\CatalogWindow.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-03T09:21:37.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "InternetShop\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\Product.cs",
-              "RelativeToolTip": "InternetShop\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:40:41.871Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CatalogWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\CatalogWindow.axaml.cs",
-              "RelativeDocumentMoniker": "InternetShop\\CatalogWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\CatalogWindow.axaml.cs",
-              "RelativeToolTip": "InternetShop\\CatalogWindow.axaml.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAIwIMAAAAoAAAAAAAAAA==",
+              "Title": "AfanasyevContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Migrations\\AfanasyevContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "InternetShop\\Migrations\\AfanasyevContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Migrations\\AfanasyevContextModelSnapshot.cs",
+              "RelativeToolTip": "InternetShop\\Migrations\\AfanasyevContextModelSnapshot.cs",
+              "ViewState": "AgIAANYAAAAAAAAAAAAmwPoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:21:37.859Z",
+              "WhenOpened": "2025-09-17T08:31:52.176Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ErrorWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\ErrorWindow.axaml",
-              "RelativeDocumentMoniker": "InternetShop\\ErrorWindow.axaml",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\ErrorWindow.axaml",
-              "RelativeToolTip": "InternetShop\\ErrorWindow.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-03T09:07:51.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ErrorWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\ErrorWindow.axaml.cs",
-              "RelativeDocumentMoniker": "InternetShop\\ErrorWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\ErrorWindow.axaml.cs",
-              "RelativeToolTip": "InternetShop\\ErrorWindow.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T09:07:51.062Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Basket.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\Basket.cs",
-              "RelativeDocumentMoniker": "InternetShop\\Models\\Basket.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\Basket.cs",
-              "RelativeToolTip": "InternetShop\\Models\\Basket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:27:07.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "App.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\App.axaml.cs",
-              "RelativeDocumentMoniker": "InternetShop\\App.axaml.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\App.axaml.cs",
-              "RelativeToolTip": "InternetShop\\App.axaml.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAiwAoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T08:22:33.678Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\MainWindow.axaml.cs",
-              "RelativeDocumentMoniker": "InternetShop\\MainWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\MainWindow.axaml.cs",
-              "RelativeToolTip": "InternetShop\\MainWindow.axaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T07:19:46.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Product_basket.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\Product_basket.cs",
-              "RelativeDocumentMoniker": "InternetShop\\Models\\Product_basket.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\Product_basket.cs",
-              "RelativeToolTip": "InternetShop\\Models\\Product_basket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T07:16:51.498Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\Role.cs",
-              "RelativeDocumentMoniker": "InternetShop\\Models\\Role.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\Role.cs",
-              "RelativeToolTip": "InternetShop\\Models\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T09:27:29.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AfanasyevContext.cs",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\AfanasyevContext.cs",
-              "RelativeDocumentMoniker": "InternetShop\\Models\\AfanasyevContext.cs",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\Models\\AfanasyevContext.cs",
-              "RelativeToolTip": "InternetShop\\Models\\AfanasyevContext.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAIwCIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T07:37:08.804Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MainWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\MainWindow.axaml",
-              "RelativeDocumentMoniker": "InternetShop\\MainWindow.axaml",
-              "ToolTip": "C:\\Users\\demo\\Desktop\\Demo\\InternetShop\\InternetShop\\MainWindow.axaml",
-              "RelativeToolTip": "InternetShop\\MainWindow.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-03T07:19:48.512Z"
             }
           ]
         }
