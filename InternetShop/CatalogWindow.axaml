@@ -3,14 +3,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
-		Width="900"
-		Height="500"
+		Width="900" Height="500"
+		MaxHeight="500" MaxWidth="900"
+		MinHeight="500" MinWidth="900"
         x:Class="InternetShop.CatalogWindow"
 		x:CompileBindings="False"
         Title="CatalogWindow">
 	<DockPanel>
 		<StackPanel Orientation="Vertical">
-			<TextBlock Text="Каталог" TextAlignment="Center" FontSize="25" Margin="0,10,0,0" />
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<TextBlock Text="Каталог" TextAlignment="Center" FontSize="25" Margin="0,10,0,0" />
+				<Button Name="AdmBtn" Content="Админ" Margin="10,10,0,0" Click="AdminClick" IsVisible="False" />
+			</StackPanel>
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
 				<TextBox Width="275" Watermark="Поиск" x:Name="a"/>
 				<ComboBox PlaceholderText="По алфавиту" x:Name="comboSortName" Width="150" Margin="20,0,0,0"/>

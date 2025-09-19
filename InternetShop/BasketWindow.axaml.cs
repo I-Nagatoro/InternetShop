@@ -12,6 +12,7 @@ namespace InternetShop;
 public partial class BasketWindow : Window
 {
     public int userId;
+    List<Product_basket> product_list = new List<Product_basket>();
     public BasketWindow()
     {
         InitializeComponent();
@@ -27,11 +28,11 @@ public partial class BasketWindow : Window
     public void LoadProducts()
     {
         int user_id = userId;
+        product_list.Clear();
         decimal SumPrice = 0;
-        using var context = new AfanasyevContext();
+        using var context = new User025Context();
         var basket_id = context.Baskets.Where(x => x.UserId == user_id).Select(x => x.BasketId).FirstOrDefault();
         var product_id_in_basket = context.BasketProducts.Where(x => x.BasketId == basket_id).Select(x => x.ProductId).ToList().Order();
-        List<Product_basket> product_list = new List<Product_basket>();
         foreach (var product in product_id_in_basket)
         {
             product_list.Add(new Product_basket
@@ -45,17 +46,18 @@ public partial class BasketWindow : Window
             });
             SumPrice += context.Products.Where(x => x.ProductId == product).Select(x => x.Cost).FirstOrDefault() * context.BasketProducts.Where(x => x.ProductId == product).Select(x => x.Count).FirstOrDefault();
         }
-        product_list.OrderBy(x=>x.Caption);
+        product_list.OrderBy(x => x.Caption);
+        BasketList.ItemsSource = null;
         BasketList.ItemsSource = product_list;
-        sumprice.Text=SumPrice.ToString();
+        sumprice.Text = SumPrice.ToString();
     }
 
     public void DecreaseQuantity(object sender, RoutedEventArgs e)
     {
-        using var context = new AfanasyevContext();
+        using var context = new User025Context();
         Button btnMin = sender as Button;
         var product_id = (int)btnMin.Tag;
-        var product = context.BasketProducts.FirstOrDefault(x=>x.ProductId==product_id);
+        var product = context.BasketProducts.FirstOrDefault(x => x.ProductId == product_id);
         if (product != null)
         {
             if (product.Count > 1)
@@ -73,7 +75,7 @@ public partial class BasketWindow : Window
     }
     public void IncreaseQuantity(object sender, RoutedEventArgs e)
     {
-        using var context = new AfanasyevContext();
+        using var context = new User025Context();
         Button btnMin = sender as Button;
         var product_id = (int)btnMin.Tag;
         var product = context.BasketProducts.FirstOrDefault(x => x.ProductId == product_id);
@@ -93,6 +95,8 @@ public partial class BasketWindow : Window
 
     public void OrderDone(object sender, RoutedEventArgs e)
     {
-
+        OrderWindow orderWindow = new OrderWindow(userId, product_list);
+        orderWindow.Show();
+        Close();
     }
 }

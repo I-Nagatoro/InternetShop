@@ -4,6 +4,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 		Width="800" Height="450"
+		MaxHeight="450" MaxWidth="800"
+		MinHeight="450" MinWidth="800"
+		SizeToContent="WidthAndHeight"
         x:Class="InternetShop.MainWindow"
         Title="InternetShop">
 	<DockPanel>
@@ -21,7 +24,7 @@
 				<TextBox x:Name="passwordBox"/>
 			</StackPanel>
 			<StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,80,0,0" HorizontalAlignment="Center">
-				<Button Content="Регистрация" Margin="0,0,25,0" />
+				<Button Click="RegistrationOpen" Content="Регистрация" Margin="0,0,25,0" />
 				<Button Content="Войти" x:Name="Enter" Click="EnterButton"/>
 			</StackPanel>
 		</StackPanel>

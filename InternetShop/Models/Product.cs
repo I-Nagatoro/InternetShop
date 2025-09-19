@@ -10,13 +10,13 @@ public partial class Product
 
     public string ProductName { get; set; } = null!;
 
-    public decimal Cost { get; set; }
-
     public string? ProductCaption { get; set; }
 
     public string? ProductImage { get; set; }
 
-    public Bitmap? ParseImage 
+    public decimal Cost { get; set; }
+
+    public Bitmap? ParseImage
     {
         get
         {

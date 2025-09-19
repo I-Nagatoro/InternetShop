@@ -7,9 +7,9 @@ public partial class Comm
 {
     public int Id { get; set; }
 
-    public int ProductId { get; set; }
-
     public int UserId { get; set; }
+
+    public int ProductId { get; set; }
 
     public string Comm1 { get; set; } = null!;
 }

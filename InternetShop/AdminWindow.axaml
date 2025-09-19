@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="350"
+		MinHeight="350"
+		MaxHeight="350"
+		MinWidth="600"
+		MaxWidth="600"
+        x:Class="InternetShop.AdminWindow"
+        Title="AdminWindow">
+	<DockPanel>
+		<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="5">
+			<TextBlock HorizontalAlignment="Center" Text="Админ панель" FontSize="27" />
+			<Button Click="AddProductClick" Width="315" HorizontalAlignment="Center" Content="Добавить новый продукт" FontSize="15" HorizontalContentAlignment="Center"/>
+			<Button Click="UpdateProductClick" Width="315" HorizontalAlignment="Center" Content="Редактировать существующий продукт" FontSize="15" HorizontalContentAlignment="Center"/>
+			<Button Click="DeleteProductClick" Width="315" HorizontalAlignment="Center" Content="Удалить сущесвующий продукт" FontSize="15" HorizontalContentAlignment="Center"/>
+			<Button Click="ShowUpdateOrdersClick" Width="315" HorizontalAlignment="Center" Content="Просмотр и реактирование заказов" FontSize="15" HorizontalContentAlignment="Center"/>
+		</StackPanel>
+	</DockPanel>
+</Window>

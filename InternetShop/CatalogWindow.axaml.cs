@@ -59,7 +59,7 @@ public partial class CatalogWindow : Window
         InitializeComponent();
         user_id = UserId;
 
-        using var context = new AfanasyevContext();
+        using var context = new User025Context();
         var basket = context.Baskets.FirstOrDefault(x => x.UserId == UserId);
 
         if (basket == null)
@@ -71,11 +71,32 @@ public partial class CatalogWindow : Window
 
         Basket_id = basket.BasketId;
         LoadProducts();
+        if (CheckAdm(user_id))
+        {
+            AdmBtn.IsVisible=true;
+        }
+    }
+
+    public void AdminClick(object sender, RoutedEventArgs e)
+    {
+        AdminWindow adm = new AdminWindow();
+        adm.Show();
+        Close();
+    }
+
+    public bool CheckAdm(int user_id)
+    {
+        using var context = new User025Context();
+        if (context.Users.Where(x=>x.UserId == user_id).Select(x => x.RoleId).First() == 1)
+        {
+            return true;
+        }
+        return false;
     }
 
     public void LoadProducts()
     {
-        using var context = new AfanasyevContext();
+        using var context = new User025Context();
         var products = context.Products.ToList();
         var basketProducts = context.BasketProducts
             .Where(bp => bp.BasketId == Basket_id)
@@ -97,7 +118,7 @@ public partial class CatalogWindow : Window
         var button = sender as Button;
         var productId = (int)button.Tag;
 
-        using var context = new AfanasyevContext();
+        using var context = new User025Context();
 
         var basketProduct = context.BasketProducts
             .FirstOrDefault(bp => bp.BasketId == Basket_id && bp.ProductId == productId);
@@ -131,7 +152,7 @@ public partial class CatalogWindow : Window
         var button = sender as Button;
         var productId = (int)button.Tag;
 
-        using var context = new AfanasyevContext();
+        using var context = new User025Context();
         var basketProduct = context.BasketProducts
             .FirstOrDefault(bp => bp.BasketId == Basket_id && bp.ProductId == productId);
 
@@ -167,7 +188,7 @@ public partial class CatalogWindow : Window
         var button = sender as Button;
         var productId = (int)button.Tag;
 
-        using var context = new AfanasyevContext();
+        using var context = new User025Context();
         var basketProduct = context.BasketProducts
             .FirstOrDefault(bp => bp.BasketId == Basket_id && bp.ProductId == productId);
 

@@ -14,15 +14,13 @@ namespace InternetShop
         public MainWindow()
         {
             InitializeComponent();
-
-
         }
 
         public void EnterButton(object sender, RoutedEventArgs e)
         {
             var username = usernameBox.Text;
             var password = passwordBox.Text;
-            using var context = new AfanasyevContext();
+            using var context = new User025Context();
                 var user = context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
                 if (user != null)
                 {
@@ -36,6 +34,13 @@ namespace InternetShop
                     var errorWindow = new ErrorWindow(error);
                     errorWindow.Show();
                 }
+        }
+
+        public void RegistrationOpen(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Show();
+            Close();
         }
     }
 }
