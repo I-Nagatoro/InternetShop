@@ -27,19 +27,19 @@
 				<ComboBox SelectionChanged="SortAlphComboBox" PlaceholderText="По алфавиту" x:Name="comboSortName" Width="150" Margin="20,0,0,0"
                          Background="#FFFFFF" BorderBrush="#E2E8F0" BorderThickness="1" CornerRadius="5" Padding="5"
                          Foreground="#1E293B">
-					<ComboBoxItem Foreground="#1E293B">По возрастанию</ComboBoxItem>
-					<ComboBoxItem Foreground="#1E293B">По убыванию</ComboBoxItem>
+					<ComboBoxItem VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#1E293B">По возрастанию</ComboBoxItem>
+					<ComboBoxItem VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#1E293B">По убыванию</ComboBoxItem>
 				</ComboBox>
-				<ComboBox SelectionChanged="SortCostComboBox" PlaceholderText="По цене" x:Name="comboSortCost" Width="150" Margin="20,0,0,0"
+				<ComboBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionChanged="SortCostComboBox" PlaceholderText="По цене" x:Name="comboSortCost" Width="150" Margin="20,0,0,0"
                          Background="#FFFFFF" BorderBrush="#E2E8F0" BorderThickness="1" CornerRadius="5" Padding="5"
                          Foreground="#1E293B">
-					<ComboBoxItem Foreground="#1E293B">По возрастанию</ComboBoxItem>
-					<ComboBoxItem Foreground="#1E293B">По убыванию</ComboBoxItem>
+					<ComboBoxItem VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#1E293B">По возрастанию</ComboBoxItem>
+					<ComboBoxItem VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#1E293B">По убыванию</ComboBoxItem>
 				</ComboBox>
-				<Button Click="DropSortClick" Height="32" Margin="20,0,0,0" Content="Сбросить фильтры"
+				<Button VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="DropSortClick" Height="32" Margin="20,0,0,0" Content="Сбросить фильтры"
                        Background="Transparent" Foreground="#64748B" BorderBrush="#E2E8F0" BorderThickness="1"
                        CornerRadius="5" Padding="15,0" FontWeight="SemiBold"/>
-				<Button Height="32" Margin="20,0,0,0" Content="Корзина" Click="BasketOpen_Click"
+				<Button VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="32" Margin="20,0,0,0" Content="Корзина" Click="BasketOpen_Click"
                        Background="#10B981" Foreground="White" BorderThickness="0"
                        CornerRadius="5" Padding="15,0" FontWeight="SemiBold"/>
 			</StackPanel>

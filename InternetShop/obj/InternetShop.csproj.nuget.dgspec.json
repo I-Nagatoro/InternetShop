@@ -11,7 +11,7 @@
         "projectName": "InternetShop",
         "projectPath": "C:\\Users\\sokol\\source\\repos\\InternetShop\\InternetShop\\InternetShop.csproj",
         "packagesPath": "C:\\Users\\sokol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sokol\\Source\\Repos\\InternetShop\\InternetShop\\obj\\",
+        "outputPath": "C:\\Users\\sokol\\source\\repos\\InternetShop\\InternetShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sokol\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -16,22 +16,22 @@
 			<TextBlock HorizontalAlignment="Center" Text="Админ панель" FontSize="27"
                       Foreground="#1E293B" FontWeight="Bold" Margin="0,0,0,10"/>
 
-			<Button Click="AddProductClick" Width="315" HorizontalAlignment="Center"
+			<Button Click="AddProductClick" Width="340" HorizontalAlignment="Center"
                    Content="Добавить новый продукт" FontSize="15" HorizontalContentAlignment="Center"
                    Background="#1E40AF" Foreground="White" BorderThickness="0"
                    CornerRadius="5" Padding="15,10" FontWeight="SemiBold"/>
 
-			<Button Click="UpdateProductClick" Width="315" HorizontalAlignment="Center"
+			<Button Click="UpdateProductClick" Width="340" HorizontalAlignment="Center"
                    Content="Редактировать существующий продукт" FontSize="15" HorizontalContentAlignment="Center"
                    Background="#1E40AF" Foreground="White" BorderThickness="0"
                    CornerRadius="5" Padding="15,10" FontWeight="SemiBold"/>
 
-			<Button Click="DeleteProductClick" Width="315" HorizontalAlignment="Center"
+			<Button Click="DeleteProductClick" Width="340" HorizontalAlignment="Center"
                    Content="Удалить существующий продукт" FontSize="15" HorizontalContentAlignment="Center"
                    Background="#DC2626" Foreground="White" BorderThickness="0"
                    CornerRadius="5" Padding="15,10" FontWeight="SemiBold"/>
 
-			<Button Click="ShowUpdateOrdersClick" Width="315" HorizontalAlignment="Center"
+			<Button Click="ShowUpdateOrdersClick" Width="340" HorizontalAlignment="Center"
                    Content="Просмотр и редактирование заказов" FontSize="15" HorizontalContentAlignment="Center"
                    Background="#374151" Foreground="White" BorderThickness="0"
                    CornerRadius="5" Padding="15,10" FontWeight="SemiBold"/>

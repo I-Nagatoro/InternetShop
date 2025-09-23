@@ -319,7 +319,6 @@ C:\Users\sokol\Source\Repos\InternetShop\InternetShop\obj\Debug\net9.0\InternetS
 C:\Users\sokol\Source\Repos\InternetShop\InternetShop\obj\Debug\net9.0\InternetShop.AssemblyInfoInputs.cache
 C:\Users\sokol\Source\Repos\InternetShop\InternetShop\obj\Debug\net9.0\InternetShop.AssemblyInfo.cs
 C:\Users\sokol\Source\Repos\InternetShop\InternetShop\obj\Debug\net9.0\InternetShop.csproj.CoreCompileInputs.cache
-C:\Users\sokol\Source\Repos\InternetShop\InternetShop\obj\Debug\net9.0\InternetShop.sourcelink.json
 C:\Users\sokol\Source\Repos\InternetShop\InternetShop\obj\Debug\net9.0\Internet.E1DB6F48.Up2Date
 C:\Users\sokol\Source\Repos\InternetShop\InternetShop\obj\Debug\net9.0\InternetShop.dll
 C:\Users\sokol\Source\Repos\InternetShop\InternetShop\obj\Debug\net9.0\refint\InternetShop.dll
