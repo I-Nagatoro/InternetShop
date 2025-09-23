@@ -4,59 +4,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
 		Width="900" Height="500"
-		MaxHeight="500" MaxWidth="900"
-		MinHeight="500" MinWidth="900"
+		MaxHeight="540" MaxWidth="925"
+		MinHeight="540" MinWidth="925"
+		Icon="avares://InternetShop/Assets/logo.ico"
         x:Class="InternetShop.CatalogWindow"
 		x:CompileBindings="False"
-        Title="CatalogWindow">
+        Title="Смешной каталог"
+        Background="#F8FAFC">
 	<DockPanel>
 		<StackPanel Orientation="Vertical">
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<TextBlock Text="Каталог" TextAlignment="Center" FontSize="25" Margin="0,10,0,0" />
-				<Button Name="AdmBtn" Content="Админ" Margin="10,10,0,0" Click="AdminClick" IsVisible="False" />
+				<TextBlock Text="Каталог" TextAlignment="Center" FontSize="25" Margin="0,10,0,0"
+                          Foreground="#1E293B" FontWeight="Bold"/>
+				<Button Name="AdmBtn" Content="Админ" Margin="10,10,0,0" Click="AdminClick" IsVisible="False"
+                       Background="#6B7280" Foreground="White" BorderThickness="0" CornerRadius="5" Padding="15,8"
+                       FontWeight="SemiBold"/>
 			</StackPanel>
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-				<TextBox KeyUp="SearchBoxKeyUp" Width="275" Watermark="Поиск" Name="SearchBox"/>
-				<ComboBox SelectionChanged="SortAlphComboBox" PlaceholderText="По алфавиту" x:Name="comboSortName" Width="150" Margin="20,0,0,0">
-					<ComboBoxItem>По возрастанию</ComboBoxItem>
-					<ComboBoxItem>По убыванию</ComboBoxItem>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
+				<TextBox KeyUp="SearchBoxKeyUp" Width="275" Watermark="Поиск" Name="SearchBox"
+                        Background="#FFFFFF" BorderBrush="#E2E8F0" BorderThickness="1" CornerRadius="5" Padding="10"
+                        Foreground="#1E293B"/>
+				<ComboBox SelectionChanged="SortAlphComboBox" PlaceholderText="По алфавиту" x:Name="comboSortName" Width="150" Margin="20,0,0,0"
+                         Background="#FFFFFF" BorderBrush="#E2E8F0" BorderThickness="1" CornerRadius="5" Padding="5"
+                         Foreground="#1E293B">
+					<ComboBoxItem Foreground="#1E293B">По возрастанию</ComboBoxItem>
+					<ComboBoxItem Foreground="#1E293B">По убыванию</ComboBoxItem>
 				</ComboBox>
-				<ComboBox SelectionChanged="SortCostComboBox" PlaceholderText="По цене" x:Name="comboSortCost" Width="150" Margin="20,0,0,0">
-					<ComboBoxItem>По возрастанию</ComboBoxItem>
-					<ComboBoxItem>По убыванию</ComboBoxItem>
+				<ComboBox SelectionChanged="SortCostComboBox" PlaceholderText="По цене" x:Name="comboSortCost" Width="150" Margin="20,0,0,0"
+                         Background="#FFFFFF" BorderBrush="#E2E8F0" BorderThickness="1" CornerRadius="5" Padding="5"
+                         Foreground="#1E293B">
+					<ComboBoxItem Foreground="#1E293B">По возрастанию</ComboBoxItem>
+					<ComboBoxItem Foreground="#1E293B">По убыванию</ComboBoxItem>
 				</ComboBox>
-				<Button Click="DropSortClick" Height="32" Margin="20,0,0,0" Content="Сбросить фильтры"/>
-				<Button Height="32" Margin="20,0,0,0" Content="Корзина" Click="BasketOpen_Click"/>
+				<Button Click="DropSortClick" Height="32" Margin="20,0,0,0" Content="Сбросить фильтры"
+                       Background="Transparent" Foreground="#64748B" BorderBrush="#E2E8F0" BorderThickness="1"
+                       CornerRadius="5" Padding="15,0" FontWeight="SemiBold"/>
+				<Button Height="32" Margin="20,0,0,0" Content="Корзина" Click="BasketOpen_Click"
+                       Background="#10B981" Foreground="White" BorderThickness="0"
+                       CornerRadius="5" Padding="15,0" FontWeight="SemiBold"/>
 			</StackPanel>
-			<ScrollViewer>
+			<ScrollViewer Margin="10">
 				<StackPanel Margin="0,10,0,0">
-					<ListBox x:Name="CatalogProducts" Height="365">
+					<ListBox x:Name="CatalogProducts" Height="365" Background="Transparent" BorderThickness="0">
 						<ListBox.ItemTemplate>
 							<DataTemplate>
-								<Border BorderThickness="1" Padding="1" BorderBrush="Black" CornerRadius="5">
-									<StackPanel Orientation="Horizontal" Spacing="10">
+								<Border BorderThickness="1" Padding="10" BorderBrush="#E2E8F0" CornerRadius="8"
+                                       Background="#FFFFFF" Margin="0,5">
+									<StackPanel Orientation="Horizontal" Spacing="15">
 										<Image Width="100" Height="100" Source="{Binding Product.ParseImage}"/>
 										<StackPanel>
-											<TextBlock Text="{Binding Product.ProductName}" FontSize="20" FontWeight="Bold"/>
-											<TextBlock Text="{Binding Product.Cost, StringFormat='Цена: {0:C}'}" FontSize="18"/>
-											<TextBlock Text="{Binding Product.ProductCaption}" FontSize="17"/>
+											<TextBlock Text="{Binding Product.ProductName}" FontSize="18" FontWeight="Bold" Foreground="#1E293B"/>
+											<TextBlock Text="{Binding Product.Cost, StringFormat='Цена: {0:C}'}" FontSize="16" Foreground="#2563EB" FontWeight="SemiBold"/>
+											<TextBlock Text="{Binding Product.ProductCaption}" FontSize="14" Foreground="#64748B" Margin="0,0,0,10"/>
 
-											<Button Click="AddToCart"
-											Tag="{Binding Product.ProductId}"
-											Content="Добавить в корзину"
-											IsVisible="{Binding !IsInBasket}"/>
+											<Button Click="AddToCart" Tag="{Binding Product.ProductId}" Content="Добавить в корзину"
+                                                    IsVisible="{Binding !IsInBasket}"
+                                                   Background="#2563EB" Foreground="White" BorderThickness="0"
+                                                   CornerRadius="5" Padding="15,8" FontWeight="SemiBold"
+                                                   HorizontalAlignment="Left"/>
 
-											<StackPanel Orientation="Horizontal"
-													   IsVisible="{Binding IsInBasket}">
-												<Button Click="DecreaseQuantity"
-													   Tag="{Binding Product.ProductId}"
-													   Content="-"/>
-												<TextBlock Padding="10"
-														  Text="{Binding Quantity}"
-														  VerticalAlignment="Center"/>
-												<Button Click="IncreaseQuantity"
-													   Tag="{Binding Product.ProductId}"
-													   Content="+"/>
+											<StackPanel Orientation="Horizontal" IsVisible="{Binding IsInBasket}" HorizontalAlignment="Left">
+												<Button Click="DecreaseQuantity" Tag="{Binding Product.ProductId}" Content="-"
+                                                       Background="#E2E8F0" Foreground="#64748B" BorderThickness="0"
+                                                       CornerRadius="3" Width="30" Height="30" FontWeight="Bold"/>
+												<TextBlock Padding="10" Text="{Binding Quantity}" VerticalAlignment="Center"
+                                                          Foreground="#1E293B" FontWeight="SemiBold"/>
+												<Button Click="IncreaseQuantity" Tag="{Binding Product.ProductId}" Content="+"
+                                                       Background="#2563EB" Foreground="White" BorderThickness="0"
+                                                       CornerRadius="3" Width="30" Height="30" FontWeight="Bold"/>
 											</StackPanel>
 										</StackPanel>
 									</StackPanel>
@@ -64,7 +79,9 @@
 							</DataTemplate>
 						</ListBox.ItemTemplate>
 					</ListBox>
-					<Button Click="ExitClick" Content="Выйти" Margin="10,5,0,0"/>
+					<Button Click="ExitClick" Content="Выйти" Margin="10,10,0,0"
+                           Background="Transparent" Foreground="#64748B" BorderBrush="#E2E8F0" BorderThickness="1"
+                           CornerRadius="5" Padding="15,8" FontWeight="SemiBold" HorizontalAlignment="Left"/>
 				</StackPanel>
 			</ScrollViewer>
 		</StackPanel>

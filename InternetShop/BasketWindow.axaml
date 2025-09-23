@@ -3,53 +3,61 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="485"
-		MaxHeight="485" MaxWidth="800"
-		MinHeight="485" MinWidth="800"
+		MaxHeight="490" MaxWidth="800"
+		MinHeight="490" MinWidth="800"
 		SizeToContent="Height"
 		Width="800"
+		Icon="avares://InternetShop/Assets/logo.ico"
         x:Class="InternetShop.BasketWindow"
 		x:CompileBindings="False"
-        Title="BasketWindow">
+        Title="Смешная корзина"
+        Background="#F8FAFC">
 	<DockPanel>
-		<StackPanel Orientation="Vertical">
-			<TextBlock Text="Корзина" HorizontalAlignment="Center" FontSize="25" Margin="0,10,0,0"/>
-			<ListBox x:Name="BasketList" MaxHeight="380">
+		<StackPanel Orientation="Vertical" Margin="10">
+			<TextBlock Text="Корзина" HorizontalAlignment="Center" FontSize="25" Margin="0,10,0,15"
+                      Foreground="#1E293B" FontWeight="Bold"/>
+			<ListBox x:Name="BasketList" MaxHeight="380" Background="Transparent" BorderThickness="0">
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						<Border BorderThickness="1" BorderBrush="Black" CornerRadius="5" Padding="1">
-						<StackPanel Orientation="Horizontal">
-							<Image HorizontalAlignment="Left" Width="100" Height="100" Source="{Binding ParseImage}"/>
-							<StackPanel Orientation="Vertical">
-							<StackPanel Orientation="Vertical">
-								<TextBlock Text="{Binding ProductName}" FontSize="20" FontWeight="Bold"/>
-								<TextBlock Text="{Binding Price, StringFormat='Цена: {0:C}'}" FontSize="18"/>
-								<TextBlock Text="{Binding Caption}" FontSize="17"/>
-							</StackPanel>
-								<StackPanel Orientation="Horizontal">
-									<Button Click="DecreaseQuantity"
-										   Tag="{Binding ProductId}"
-										   Content="-"/>
-									<TextBlock Padding="10"
-											  Text="{Binding Count}"
-											  VerticalAlignment="Center"/>
-									<Button Click="IncreaseQuantity"
-										   Tag="{Binding ProductId}"
-										   Content="+"/>
+						<Border BorderThickness="1" BorderBrush="#E2E8F0" CornerRadius="8" Padding="10" Margin="0,5"
+                               Background="#FFFFFF">
+							<StackPanel Orientation="Horizontal" Spacing="15">
+								<Image HorizontalAlignment="Left" Width="100" Height="100" Source="{Binding ParseImage}"/>
+								<StackPanel Orientation="Vertical" VerticalAlignment="Center">
+									<StackPanel Orientation="Vertical">
+										<TextBlock Text="{Binding ProductName}" FontSize="18" FontWeight="Bold" Foreground="#1E293B"/>
+										<TextBlock Text="{Binding Price, StringFormat='Цена: {0:C}'}" FontSize="16" Foreground="#2563EB" FontWeight="SemiBold"/>
+										<TextBlock Text="{Binding Caption}" FontSize="14" Foreground="#64748B" Margin="0,0,0,10"/>
+									</StackPanel>
+									<StackPanel Orientation="Horizontal">
+										<Button Click="DecreaseQuantity" Tag="{Binding ProductId}" Content="-"
+											   Background="#E2E8F0" Foreground="#64748B" BorderThickness="0"
+											   CornerRadius="3" Width="30" Height="30" FontWeight="Bold"/>
+										<TextBlock Padding="10" Text="{Binding Count}" VerticalAlignment="Center"
+												  Foreground="#1E293B" FontWeight="SemiBold"/>
+										<Button Click="IncreaseQuantity" Tag="{Binding ProductId}" Content="+"
+											   Background="#2563EB" Foreground="White" BorderThickness="0"
+											   CornerRadius="3" Width="30" Height="30" FontWeight="Bold"/>
+									</StackPanel>
 								</StackPanel>
 							</StackPanel>
-						</StackPanel>
 						</Border>
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<StackPanel Orientation="Horizontal" Name="allCost" IsVisible="False">
-				<TextBlock  Margin="5,5,0,0" Text="Общая стоимость корзины: "/>
-				<TextBlock Margin="0,5,0,0" x:Name="sumprice" Text=""/>
+			<StackPanel Orientation="Horizontal" Name="allCost" IsVisible="False" HorizontalAlignment="Center" Margin="0,10">
+				<TextBlock Margin="5,5,0,0" Text="Общая стоимость корзины: " Foreground="#1E293B" FontSize="16"/>
+				<TextBlock Margin="5,5,0,0" x:Name="sumprice" Text="" Foreground="#2563EB" FontSize="16" FontWeight="Bold"/>
 			</StackPanel>
-			<TextBlock Name="Empty" Text="Корзина пуста" HorizontalAlignment="Center" FontSize="20"/>
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Content="Назад" Click="Back" Margin="5" />
-				<Button Content="Оформить заказ" Click="OrderDone" Margin="5" Name="DoneButton" IsVisible="False"/>
+			<TextBlock Name="Empty" Text="Корзина пуста" HorizontalAlignment="Center" FontSize="20"
+                      Foreground="#64748B" Margin="0,20"/>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15">
+				<Button Content="Назад" Click="Back" Margin="5"
+                       Background="Transparent" Foreground="#64748B" BorderBrush="#E2E8F0" BorderThickness="1"
+                       CornerRadius="5" Padding="20,10" FontWeight="SemiBold"/>
+				<Button Content="Оформить заказ" Click="OrderDone" Margin="5" Name="DoneButton" IsVisible="False"
+                       Background="#10B981" Foreground="White" BorderThickness="0"
+                       CornerRadius="5" Padding="20,10" FontWeight="SemiBold"/>
 			</StackPanel>
 		</StackPanel>
 	</DockPanel>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IKA8jGSzQdk=",
+  "dgSpecHash": "YMShlH4FsDo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sokol\\Source\\Repos\\InternetShop\\InternetShop\\InternetShop.csproj",
+  "projectFilePath": "C:\\Users\\sokol\\source\\repos\\InternetShop\\InternetShop\\InternetShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sokol\\.nuget\\packages\\avalonia\\11.3.0\\avalonia.11.3.0.nupkg.sha512",
     "C:\\Users\\sokol\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.22045.20230930\\avalonia.angle.windows.natives.2.1.22045.20230930.nupkg.sha512",

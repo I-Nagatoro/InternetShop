@@ -2,68 +2,95 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="427"
-		MinHeight="427"
-		MaxHeight="427"
+        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="450"
+		MinHeight="450"
+		MaxHeight="450"
 		MinWidth="700"
 		MaxWidth="700"
 		x:CompileBindings="False"
         x:Class="InternetShop.ViewOrderWindow"
-        Title="ViewOrderWindow">
-	<DockPanel>
+		Icon="avares://InternetShop/Assets/logo.ico"
+        Title="Страшная панель заказа"
+        Background="#F8FAFC">
+	<DockPanel Margin="10">
 		<StackPanel Orientation="Vertical">
-			<StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
-				<StackPanel Orientation="Vertical">
-					<StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-						<TextBlock Text="Номер заказа: " Margin="0,15,0,0"/>
-						<TextBlock Name="OrderNumber" Margin="0,15,0,0"/>
+			<StackPanel Orientation="Horizontal" DockPanel.Dock="Left" Spacing="40">
+				<StackPanel Orientation="Vertical" Width="300">
+					<StackPanel Orientation="Horizontal" Margin="0,10,0,15">
+						<TextBlock Text="Номер заказа: " Margin="0,0,5,0" Foreground="#64748B" FontWeight="Medium"/>
+						<TextBlock Name="OrderNumber" Margin="0,0,0,0" Foreground="#1E293B" FontWeight="SemiBold"/>
 					</StackPanel>
-					<StackPanel Margin="15,0,0,0">
-						<TextBlock Name="UserNameTxt" Text="Имя пользователя: " Margin="0,10,0,0"/>
-						<TextBlock Text="Номер для связи: " Margin="0,10,0,0"/>
-						<TextBox Name="PhoneTxt" Width="300" HorizontalAlignment="Left"/>
-						<TextBlock Text="Адрес доставки: " Margin="0,10,0,0"/>
-						<TextBox Name="AddressBox" Width="300" Height="100"
-								 TextWrapping="Wrap" HorizontalAlignment="Left"/>
-						<TextBlock Name="DateOpen" Text="Дата открытия заказа:" Margin="0,10,0,0"/>
-						<TextBlock Name="DateClose" Text="Дата закрытия заказа:" Margin="0,10,0,0"/>
-						<StackPanel Orientation="Horizontal">
-							<TextBlock Text="Статус заказа:" Margin="0,17,20,0"/>
-							<ComboBox Name="OrderStatus" Width="100" Margin="0,10,0,0">
-								<ComboBoxItem>Open</ComboBoxItem>
-								<ComboBoxItem>Close</ComboBoxItem>
+
+					<StackPanel Margin="0,0,0,0">
+						<TextBlock Name="UserNameTxt" Text="Имя пользователя: " Margin="0,0,0,8" Foreground="#64748B"/>
+						<TextBlock Text="Номер для связи: " Margin="0,0,0,5" Foreground="#64748B"/>
+						<TextBox Name="PhoneTxt" Width="280" HorizontalAlignment="Left" Margin="0,0,0,10"
+                                Background="#FFFFFF" BorderBrush="#CBD5E1" BorderThickness="1" CornerRadius="5" Padding="8"
+                                Foreground="#1E293B"/>
+						<TextBlock Text="Адрес доставки: " Margin="0,0,0,5" Foreground="#64748B"/>
+						<TextBox Name="AddressBox" Width="280" Height="80"
+								 TextWrapping="Wrap" HorizontalAlignment="Left" Margin="0,0,0,10"
+                                Background="#FFFFFF" BorderBrush="#CBD5E1" BorderThickness="1" CornerRadius="5" Padding="8"
+                                Foreground="#1E293B"/>
+						<TextBlock Name="DateOpen" Text="Дата открытия заказа:" Margin="0,0,0,8" Foreground="#64748B"/>
+						<TextBlock Name="DateClose" Text="Дата закрытия заказа:" Margin="0,0,0,8" Foreground="#64748B"/>
+
+						<StackPanel Orientation="Horizontal" Margin="0,10,0,15">
+							<TextBlock Text="Статус заказа:" Margin="0,0,15,0" Foreground="#64748B" VerticalAlignment="Center"/>
+							<ComboBox Name="OrderStatus" Width="120"
+                                    Background="#FFFFFF" BorderBrush="#CBD5E1" BorderThickness="1" CornerRadius="5" Padding="5"
+                                    Foreground="#1E293B">
+								<ComboBoxItem Foreground="#1E293B">Open</ComboBoxItem>
+								<ComboBoxItem Foreground="#1E293B">Close</ComboBoxItem>
 							</ComboBox>
 						</StackPanel>
-						<TextBlock Name="CodePickUpTxt" Text="Код для получения заказа: " Margin="0,10,0,0"/>
+
+						<TextBlock Name="CodePickUpTxt" Text="Код для получения заказа: " Margin="0,0,0,0"
+                                  Foreground="#1E40AF" FontWeight="SemiBold"/>
 					</StackPanel>
 				</StackPanel>
-				<StackPanel Spacing="10" Margin="50,0,0,0">
-					<TextBlock Text="Состав заказа:" Margin="0,15,0,0"/>
-					<StackPanel  Orientation="Vertical" DockPanel.Dock="Right"
-								 VerticalAlignment="Center"
-								 HorizontalAlignment="Right">
-						<ListBox Name="ProductsList" Height="287" Margin="0,10,0,0">
+
+				<StackPanel Spacing="10" Margin="0,10,0,0" Width="320">
+					<TextBlock Text="Состав заказа:" Margin="0,0,0,10" Foreground="#1E293B" FontWeight="SemiBold" FontSize="16"/>
+
+					<Border Background="#FFFFFF" BorderBrush="#CBD5E1" BorderThickness="1" CornerRadius="5" Height="287">
+						<ListBox Name="ProductsList" Background="Transparent" BorderThickness="0" Padding="5">
 							<ListBox.ItemTemplate>
 								<DataTemplate>
-									<StackPanel Orientation="Horizontal">
-										<StackPanel Orientation="Vertical" Margin="10,0,0,0">
-											<TextBlock Text="{Binding ProductName}" FontWeight="Bold"/>
-											<TextBlock Text="{Binding Price, StringFormat='Стоимость: {0:C}'}"/>
-											<TextBlock Text="{Binding Count, StringFormat='Количество: {0}'}"/>
+									<Border BorderThickness="0,0,0,1" BorderBrush="#F1F5F9" Padding="8,5">
+										<StackPanel Orientation="Horizontal" Spacing="15">
+											<StackPanel Orientation="Vertical">
+												<TextBlock Text="{Binding ProductName}" FontWeight="Bold" Foreground="#1E293B"/>
+												<TextBlock Text="{Binding Price, StringFormat='Стоимость: {0:C}'}"
+                                                          Foreground="#10B981" FontSize="12"/>
+												<TextBlock Text="{Binding Count, StringFormat='Количество: {0}'}"
+                                                          Foreground="#64748B" FontSize="12"/>
+											</StackPanel>
 										</StackPanel>
-									</StackPanel>
+									</Border>
 								</DataTemplate>
 							</ListBox.ItemTemplate>
 						</ListBox>
-						<TextBlock Name="SumCostTxt" Text="Общая стоимость заказа:" Margin="0,10,0,0"/>
-					</StackPanel>
+					</Border>
+
+					<TextBlock Name="SumCostTxt" Text="Общая стоимость заказа:" Margin="0,10,0,0"
+                              Foreground="#1E293B" FontWeight="SemiBold" FontSize="14"/>
 				</StackPanel>
 			</StackPanel>
-			<StackPanel Orientation="Horizontal" Margin="0,15,0,0">
-				<Button Click="BackClick" Content="Отмена" Margin="21,0,5,0"/>
-				<Button Click="SaveClick" Content="Сохранить изменения" Margin="10,0,5,0"/>
-				<Button Click="DeleteProductClick" Content="Удалить выбранный продукт" Margin="10,0,5,0"/>
-				<Button Click="DeleteOrderClick" Content="Удалить весь заказ" Margin="10,0,5,0"/>
+
+			<StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center" Spacing="10">
+				<Button Click="BackClick" Content="Назад"
+                       Background="Transparent" Foreground="#64748B" BorderBrush="#CBD5E1" BorderThickness="1"
+                       CornerRadius="5" Padding="15,8" FontWeight="SemiBold"/>
+				<Button Click="SaveClick" Content="Сохранить изменения"
+                       Background="#10B981" Foreground="White" BorderThickness="0"
+                       CornerRadius="5" Padding="15,8" FontWeight="SemiBold"/>
+				<Button Click="DeleteProductClick" Content="Удалить продукт"
+                       Background="#F59E0B" Foreground="White" BorderThickness="0"
+                       CornerRadius="5" Padding="15,8" FontWeight="SemiBold"/>
+				<Button Click="DeleteOrderClick" Content="Удалить заказ"
+                       Background="#DC2626" Foreground="White" BorderThickness="0"
+                       CornerRadius="5" Padding="15,8" FontWeight="SemiBold"/>
 			</StackPanel>
 		</StackPanel>
 	</DockPanel>

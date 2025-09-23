@@ -3,32 +3,49 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-		MaxHeight="400"
+		MaxHeight="500"
 		MaxWidth="800"
         x:Class="InternetShop.EditOrderWindow"
 		x:CompileBindings="False"
-        Title="EditOrderWindow">
-	<StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+		Icon="avares://InternetShop/Assets/logo.ico"
+        Title="Смешные заказы пользователей"
+        Background="#F8FAFC">
+	<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="15">
 		<TextBlock Text="Заказы пользователей"
 				   Margin="10"
 				   HorizontalAlignment="Center"
-				   FontSize="27"/>
-		<ListBox Name="OrdersList" Height="300">
+				   FontSize="27"
+				   Foreground="#1E293B"
+				   FontWeight="Bold"/>
+
+		<ListBox Name="OrdersList" Height="300" Width="750" Background="#FFFFFF"
+                BorderBrush="#CBD5E1" BorderThickness="1" CornerRadius="5">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<Border Tag="{Binding OrderId}"
-							BorderThickness="10"
-							DoubleTapped="CheckOrderClick">
-						<StackPanel Orientation="Horizontal" Spacing="20">
-							<TextBlock Text="{Binding UserId, StringFormat='ID пользователя: {0}'}"/>
-							<TextBlock Text="{Binding Username, StringFormat='Имя пользователя: {0}'}"/>
-							<TextBlock Name="OrderIdField" Tag="{Binding OrderId}" Text="{Binding OrderId, StringFormat='ID заказа: {0}'}"/>
-							<TextBlock Text="{Binding SumCost, StringFormat='Стоимость заказа: {0}'}"/>
+							BorderThickness="0,0,0,1"
+							BorderBrush="#F1F5F9"
+							Padding="15,10"
+							DoubleTapped="CheckOrderClick"
+							Background="Transparent">
+						<StackPanel Orientation="Horizontal" Spacing="30">
+							<TextBlock Text="{Binding UserId, StringFormat='ID пользователя: {0}'}"
+									Foreground="#1E293B" FontWeight="Medium"/>
+							<TextBlock Text="{Binding Username, StringFormat='Имя пользователя: {0}'}"
+									Foreground="#1E293B" FontWeight="Medium"/>
+							<TextBlock Name="OrderIdField" Tag="{Binding OrderId}"
+									Text="{Binding OrderId, StringFormat='ID заказа: {0}'}"
+									Foreground="#1E40AF" FontWeight="SemiBold"/>
+							<TextBlock Text="{Binding SumCost, StringFormat='Стоимость: {0:C}'}"
+									Foreground="#10B981" FontWeight="SemiBold"/>
 						</StackPanel>
 					</Border>
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
-		<Button Click="BackClick" Content="Назад" Margin="0,7,0,0" HorizontalAlignment="Center"/>
+
+		<Button Click="BackClick" Content="Назад" Margin="0,15,0,0" HorizontalAlignment="Center"
+				Background="Transparent" Foreground="#64748B" BorderBrush="#CBD5E1" BorderThickness="1"
+				CornerRadius="5" Padding="20,10" FontWeight="SemiBold" Width="120"/>
 	</StackPanel>
 </Window>

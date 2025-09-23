@@ -34,7 +34,7 @@ public partial class RegistrationWindow : Window
         {
             ErrTxt.Text = "Введите корректное имя пользователя (>=4 символов)";
         }
-        else if(context.Users.Where(x => x.Username == username).Any())
+        else if (context.Users.Where(x => x.Username == username).Any())
         {
             ErrTxt.Text = "Данное имя пользователя уже занято";
         }
@@ -49,7 +49,12 @@ public partial class RegistrationWindow : Window
         else if (phone == null || phone.Length != 11)
         {
             ErrTxt.Text = "Введите корректный номер телефона";
-        } else if (birthday == null)
+        }
+        else if (context.Users.Where(x => x.Phone == phone).Any())
+        {
+            ErrTxt.Text = "Данный номер телефона уже зарегестрирован";
+        }
+        else if (birthday == null)
         {
             ErrTxt.Text = "Введите корректную дату рождения";
         }

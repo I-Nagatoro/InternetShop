@@ -8,20 +8,28 @@
 		MinWidth="250"
 		MaxWidth="250"
         x:Class="InternetShop.AccessOrCanselWindow"
-        Title="AccessOrCanselWindow"
-		WindowStartupLocation="CenterOwner">
+		Icon="avares://InternetShop/Assets/logo.ico"
+        Title="Страшное подтверждение"
+		WindowStartupLocation="CenterOwner"
+        Background="#F8FAFC">
 	<DockPanel>
 		<StackPanel Orientation="Vertical"
 					HorizontalAlignment="Center"
-					VerticalAlignment="Center">
-			<TextBlock Text="Вы точно уверены?" FontSize="20" HorizontalAlignment="Center"/>
-			<StackPanel Orientation="Horizontal">
-				<Button Content="Отмена" Width="70" 
-						Margin="15,10,15,10"
-						Click="CancelClick"/>
-				<Button Content="Да" Width="70" 
+					VerticalAlignment="Center"
+					Spacing="15">
+			<TextBlock Text="Вы точно уверены?" FontSize="18" HorizontalAlignment="Center"
+                      Foreground="#1E293B" FontWeight="SemiBold"/>
+			<StackPanel Orientation="Horizontal" Spacing="10">
+				<Button Content="Отмена" Width="80"
+						Click="CancelClick"
+						Background="Transparent" Foreground="#64748B" BorderBrush="#CBD5E1" BorderThickness="1"
+						CornerRadius="5" Padding="10,8" FontWeight="SemiBold"/>
+
+				<Button Content="Да" Width="80"
 						HorizontalContentAlignment="Center"
-						Click="OkClick"/>
+						Click="OkClick"
+						Background="#DC2626" Foreground="White" BorderThickness="0"
+						CornerRadius="5" Padding="10,8" FontWeight="SemiBold"/>
 			</StackPanel>
 		</StackPanel>
 	</DockPanel>

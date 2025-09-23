@@ -9,35 +9,53 @@
 		MaxHeight="930"
 		MaxWidth="800"
 		SizeToContent="Height"
+		Icon="avares://InternetShop/Assets/logo.ico"
         x:Class="InternetShop.OrderWindow"
 		x:CompileBindings="False"
-        Title="OrderWindow">
+        Title="Смешной заказ"
+        Background="#F8FAFC">
 	<DockPanel>
-		<StackPanel Orientation="Vertical">
-			<TextBlock Text="Оформление заказа" HorizontalAlignment="Center" FontSize="27"/>
-			<TextBlock Text="Данные о заказе:" Margin="10,0,0,0" FontSize="20"/>
-			<StackPanel Margin="10,5,0,0">
-				<TextBlock Text="Продукция в заказе:" FontSize="15"/>
-				<ListBox x:Name="productOrderList" MaxHeight="450">
+		<StackPanel Orientation="Vertical" Margin="15">
+			<TextBlock Text="Оформление заказа" HorizontalAlignment="Center" FontSize="27"
+                      Foreground="#1E293B" FontWeight="Bold" Margin="0,0,0,15"/>
+			<TextBlock Text="Данные о заказе:" Margin="10,0,0,0" FontSize="20" Foreground="#1E293B" FontWeight="SemiBold"/>
+			<StackPanel Margin="10,10,0,0">
+				<TextBlock Text="Продукция в заказе:" FontSize="16" Foreground="#1E293B" Margin="0,0,0,5"/>
+				<ListBox x:Name="productOrderList" MaxHeight="450" Background="#FFFFFF" BorderBrush="#E2E8F0"
+                        BorderThickness="1" CornerRadius="5" Padding="10">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
-							<StackPanel Orientation="Horizontal" >
-								<TextBlock Padding="20" Text="{Binding ProductName}"/>
-								<TextBlock Padding="20" Text="{Binding Count}"/>
-								<TextBlock Padding="20" Text="{Binding Price}*2"/>
+							<StackPanel Orientation="Horizontal" Margin="0,5">
+								<TextBlock Padding="15" Text="{Binding ProductName}" Foreground="#1E293B" FontWeight="Medium"/>
+								<TextBlock Padding="15" Text="{Binding Count, StringFormat='Количество: {0}'}" Foreground="#2563EB" FontWeight="SemiBold"/>
+								<TextBlock Padding="15" Text="{Binding Price, StringFormat='Стоимость: {0}'}" Foreground="#10B981" FontWeight="SemiBold"/>
 							</StackPanel>
 						</DataTemplate>
 					</ListBox.ItemTemplate>
 				</ListBox>
-				<TextBlock Margin="0,5,0,0" Text="Имя получателя:" FontSize="15"/>
-				<TextBox HorizontalAlignment="Left" Width="300" x:Name="usernameTxt" />
-				<TextBlock Margin="0,5,0,0" Text="Адрес доставки:" FontSize="15"/>
-				<TextBox x:Name="addressTxt" HorizontalAlignment="Left" Width="300" Height="60" TextWrapping="Wrap"/>
-				<TextBlock Margin="0,5,0,0" Text="Контактные данные:" FontSize="15"/>
-				<TextBox x:Name="phoneTxt" Width="300" Watermark="+7-(123)-456-78-90" HorizontalAlignment="Left"/>
-				<StackPanel Orientation="Horizontal" Spacing="10">
-					<Button Margin="0,10,0,10" Content="Назад" Click="BackClick"/>
-					<Button Margin="0,10,0,10" Content="Оформить заказ" Click="OrderDoneClick"/>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Margin="0,15,0,5" Text="Общая стоимость:  " FontSize="16" Foreground="#1E293B"/>
+					<TextBlock Margin="0,15,0,5" Name="SumCostTxt" FontSize="16" Foreground="#1E293B"/>
+				</StackPanel>
+				<TextBlock Margin="0,15,0,5" Text="Имя получателя:" FontSize="16" Foreground="#1E293B"/>
+				<TextBox HorizontalAlignment="Left" Width="400" x:Name="usernameTxt"
+                        Background="#FFFFFF" BorderBrush="#E2E8F0" BorderThickness="1" CornerRadius="5" Padding="10"
+                        Foreground="#1E293B"/>
+				<TextBlock Margin="0,15,0,5" Text="Адрес доставки:" FontSize="16" Foreground="#1E293B"/>
+				<TextBox x:Name="addressTxt" HorizontalAlignment="Left" Width="400" Height="60" TextWrapping="Wrap"
+                        Background="#FFFFFF" BorderBrush="#E2E8F0" BorderThickness="1" CornerRadius="5" Padding="10"
+                        Foreground="#1E293B"/>
+				<TextBlock Margin="0,15,0,5" Text="Контактные данные:" FontSize="16" Foreground="#1E293B"/>
+				<TextBox x:Name="phoneTxt" Width="400" Watermark="+7-(123)-456-78-90" HorizontalAlignment="Left"
+                        Background="#FFFFFF" BorderBrush="#E2E8F0" BorderThickness="1" CornerRadius="5" Padding="10"
+                        Foreground="#1E293B"/>
+				<StackPanel Orientation="Horizontal" Spacing="15" Margin="0,20,0,10">
+					<Button Content="Назад" Click="BackClick"
+                           Background="Transparent" Foreground="#64748B" BorderBrush="#E2E8F0" BorderThickness="1"
+                           CornerRadius="5" Padding="20,10" FontWeight="SemiBold" Cursor="Hand"/>
+					<Button Content="Оформить заказ" Click="OrderDoneClick"
+                           Background="#10B981" Foreground="White" BorderThickness="0"
+                           CornerRadius="5" Padding="20,10" FontWeight="SemiBold" Cursor="Hand"/>
 				</StackPanel>
 			</StackPanel>
 		</StackPanel>

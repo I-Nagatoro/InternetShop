@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using InternetShop.Models;
 using System.Linq;
@@ -19,5 +20,10 @@ public partial class OrderDoneWindow : Window
         using var context = new User025Context();
         var code = context.Orders.Where(x=>x.UserId==user_id).Select(x=>x.CodePickup).First();
         CodeTxt.Text = $"Код для получения заказа: {code}";
+    }
+
+    public void CloseClick(object sender, RoutedEventArgs e)
+    {
+        Close();
     }
 }

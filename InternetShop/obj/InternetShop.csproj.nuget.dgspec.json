@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sokol\\Source\\Repos\\InternetShop\\InternetShop\\InternetShop.csproj": {}
+    "C:\\Users\\sokol\\source\\repos\\InternetShop\\InternetShop\\InternetShop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sokol\\Source\\Repos\\InternetShop\\InternetShop\\InternetShop.csproj": {
+    "C:\\Users\\sokol\\source\\repos\\InternetShop\\InternetShop\\InternetShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sokol\\Source\\Repos\\InternetShop\\InternetShop\\InternetShop.csproj",
+        "projectUniqueName": "C:\\Users\\sokol\\source\\repos\\InternetShop\\InternetShop\\InternetShop.csproj",
         "projectName": "InternetShop",
-        "projectPath": "C:\\Users\\sokol\\Source\\Repos\\InternetShop\\InternetShop\\InternetShop.csproj",
+        "projectPath": "C:\\Users\\sokol\\source\\repos\\InternetShop\\InternetShop\\InternetShop.csproj",
         "packagesPath": "C:\\Users\\sokol\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\sokol\\Source\\Repos\\InternetShop\\InternetShop\\obj\\",
         "projectStyle": "PackageReference",

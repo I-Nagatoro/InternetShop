@@ -30,6 +30,12 @@ public partial class OrderWindow : Window
         usernameTxt.Text = username;
         user_id = userId;
         products = product_list;
+        decimal sumcost = 0;
+        foreach (var product in products)
+        {
+            sumcost += product.Price * product.Count;
+        }
+        SumCostTxt.Text = sumcost.ToString();
     }
 
     public void LoadOrderDetail(ObservableCollection<Product_basket> product_list)
@@ -88,7 +94,6 @@ public partial class OrderWindow : Window
                 });
                 sumcost += product.Count * product.Price;
             }
-
             context.Orders.Add(new Order
             {
                 OrderId = order_id,
