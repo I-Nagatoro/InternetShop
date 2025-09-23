@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using System.Xml.Serialization;
 
 namespace InternetShop;
 
@@ -79,7 +80,7 @@ public partial class CatalogWindow : Window
 
     public void AdminClick(object sender, RoutedEventArgs e)
     {
-        AdminWindow adm = new AdminWindow();
+        AdminWindow adm = new AdminWindow(user_id);
         adm.Show();
         Close();
     }
@@ -87,7 +88,7 @@ public partial class CatalogWindow : Window
     public bool CheckAdm(int user_id)
     {
         using var context = new User025Context();
-        if (context.Users.Where(x=>x.UserId == user_id).Select(x => x.RoleId).First() == 1)
+        if (context.Users.Where(x=>x.UserId == user_id).Select(x => x.RoleId).FirstOrDefault() == 1)
         {
             return true;
         }
@@ -210,5 +211,68 @@ public partial class CatalogWindow : Window
         var BasketWindow = new BasketWindow(user_id);
         BasketWindow.Show();
         this.Close();
+    }
+
+    public void ExitClick(object? sender, RoutedEventArgs e)
+    {
+        MainWindow mainWindow = new MainWindow();
+        mainWindow.Show();
+        this.Close();
+    }
+
+    private void SortAlphComboBox(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
+    {
+        ApplyFilters();
+    }
+
+    private void SortCostComboBox(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
+    {
+        ApplyFilters();
+    }
+
+    public void ApplyFilters()
+    {
+        IEnumerable<ProductItem> rawList = _productItems;
+        if (SearchBox.Text != null)
+        {
+            var search = SearchBox.Text.ToLower();
+            rawList = rawList.Where(x => x.Product.ProductName.ToLower().Contains(search)).ToList();
+        }
+
+        switch (comboSortName.SelectedIndex)
+        {
+            case 0:
+                rawList = rawList.OrderBy(x => x.Product.ProductName);
+                break;
+            case 1:
+                rawList = rawList.OrderByDescending(x => x.Product.ProductName);
+                break;
+        }
+
+        switch (comboSortCost.SelectedIndex)
+        {
+            case 0:
+                rawList = rawList.OrderBy(x => x.Product.Cost);
+                break;
+            case 1:
+                rawList = rawList.OrderByDescending(x => x.Product.Cost);
+                break;
+        }
+        CatalogProducts.ItemsSource = null;
+        CatalogProducts.ItemsSource = rawList;
+    }
+
+    private void SearchBoxKeyUp(object? sender, Avalonia.Input.KeyEventArgs e)
+    {
+        ApplyFilters();
+    }
+
+    public void DropSortClick(object sender, RoutedEventArgs e)
+    {
+        SearchBox.Text = "";
+        comboSortCost.SelectedIndex = -1;
+        comboSortName.SelectedIndex = -1;
+        CatalogProducts.ItemsSource = null;
+        CatalogProducts.ItemsSource = _productItems;
     }
 }

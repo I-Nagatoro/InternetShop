@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="150"
+		MinHeight="150"
+		MaxHeight="150"
+		MinWidth="250"
+		MaxWidth="250"
+        x:Class="InternetShop.AccessOrCanselWindow"
+        Title="AccessOrCanselWindow"
+		WindowStartupLocation="CenterOwner">
+	<DockPanel>
+		<StackPanel Orientation="Vertical"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center">
+			<TextBlock Text="Вы точно уверены?" FontSize="20" HorizontalAlignment="Center"/>
+			<StackPanel Orientation="Horizontal">
+				<Button Content="Отмена" Width="70" 
+						Margin="15,10,15,10"
+						Click="CancelClick"/>
+				<Button Content="Да" Width="70" 
+						HorizontalContentAlignment="Center"
+						Click="OkClick"/>
+			</StackPanel>
+		</StackPanel>
+	</DockPanel>
+</Window>

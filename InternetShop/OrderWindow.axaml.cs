@@ -6,6 +6,7 @@ using InternetShop.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace InternetShop;
@@ -14,13 +15,13 @@ public partial class OrderWindow : Window
 {
     public int user_id;
 
-    public List<Product_basket> products;
+    public ObservableCollection<Product_basket> products;
     public OrderWindow()
     {
         InitializeComponent();
     }
 
-    public OrderWindow(int userId, List<Product_basket> product_list)
+    public OrderWindow(int userId, ObservableCollection<Product_basket> product_list)
     {
         InitializeComponent();
         using var context = new User025Context();
@@ -31,7 +32,7 @@ public partial class OrderWindow : Window
         products = product_list;
     }
 
-    public void LoadOrderDetail(List<Product_basket> product_list)
+    public void LoadOrderDetail(ObservableCollection<Product_basket> product_list)
     {
         productOrderList.ItemsSource=product_list;
     }
@@ -52,36 +53,60 @@ public partial class OrderWindow : Window
         var phone = phoneTxt.Text;
         var code_pickup = Guid.NewGuid().ToString("D").ToUpper().Split('-')[0];
 
-        decimal sumcost = 0;
 
-        foreach (var product in products)
+        if (!products.Any())
         {
-            context.OrderProducts.Add(new OrderProduct
+            ErrorWindow error = new ErrorWindow("Сначала добавьте что-то в корзину");
+            error.Show();
+        }
+        else if (username == null || address == null || phone == null)
+        {
+            ErrorWindow error = new ErrorWindow("Заполните все поля");
+            error.Show();
+        }
+        else if (phone.Length != 11)
+        {
+            ErrorWindow error = new ErrorWindow("Введите корректный номер телефона для связи");
+            error.Show();
+        }
+        else if (!context.Users.Where(x => x.Phone == phone).Any())
+        {
+            ErrorWindow error = new ErrorWindow("Данный номер телефона не зарегестрирован в нашей базе. Мы не сможем подтвердить ваш заказ по данному номеру");
+            error.Show();
+        }
+        else
+        {
+            decimal sumcost = 0;
+
+            foreach (var product in products)
+            {
+                context.OrderProducts.Add(new OrderProduct
+                {
+                    OrderId = order_id,
+                    Count = product.Count,
+                    ProductsId = product.ProductId
+                });
+                sumcost += product.Count * product.Price;
+            }
+
+            context.Orders.Add(new Order
             {
                 OrderId = order_id,
-                Count = product.Count,
-                ProductsId = product.ProductId
+                UserId = user_id,
+                StartDate = DateOnly.FromDateTime(DateTime.Now),
+                Status = "Open",
+                Address = address,
+                Phone = phone,
+                SumCost = sumcost,
+                CodePickup = code_pickup
             });
-            sumcost += product.Count * product.Price;
+            context.BasketProducts.Where(x => x.BasketId == context.Baskets.Where(u => u.UserId == user_id).Select(i => i.BasketId).FirstOrDefault()).ExecuteDelete();
+            context.SaveChanges();
+            CatalogWindow catalog = new CatalogWindow(user_id);
+            OrderDoneWindow done = new OrderDoneWindow(user_id);
+            catalog.Show();
+            done.Show();
+            this.Close();
         }
-
-        context.Orders.Add(new Order
-        {
-            OrderId = order_id,
-            UserId = user_id,
-            StartDate = DateOnly.FromDateTime(DateTime.Now),
-            Status = "Open",
-            Address = address,
-            Phone=phone,
-            SumCost = sumcost,
-            CodePickup = code_pickup
-        });
-        context.BasketProducts.Where(x=>x.BasketId==context.Baskets.Where(u=>u.UserId==user_id).Select(i=>i.BasketId).FirstOrDefault()).ExecuteDelete();
-        context.SaveChanges();
-        CatalogWindow catalog = new CatalogWindow(user_id);
-        OrderDoneWindow done = new OrderDoneWindow(user_id);
-        catalog.Show();
-        done.Show();
-        this.Close();
     }
 }

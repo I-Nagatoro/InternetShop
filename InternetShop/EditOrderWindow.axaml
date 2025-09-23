@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		MaxHeight="400"
+		MaxWidth="800"
+        x:Class="InternetShop.EditOrderWindow"
+		x:CompileBindings="False"
+        Title="EditOrderWindow">
+	<StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+		<TextBlock Text="Заказы пользователей"
+				   Margin="10"
+				   HorizontalAlignment="Center"
+				   FontSize="27"/>
+		<ListBox Name="OrdersList" Height="300">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border Tag="{Binding OrderId}"
+							BorderThickness="10"
+							DoubleTapped="CheckOrderClick">
+						<StackPanel Orientation="Horizontal" Spacing="20">
+							<TextBlock Text="{Binding UserId, StringFormat='ID пользователя: {0}'}"/>
+							<TextBlock Text="{Binding Username, StringFormat='Имя пользователя: {0}'}"/>
+							<TextBlock Name="OrderIdField" Tag="{Binding OrderId}" Text="{Binding OrderId, StringFormat='ID заказа: {0}'}"/>
+							<TextBlock Text="{Binding SumCost, StringFormat='Стоимость заказа: {0}'}"/>
+						</StackPanel>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<Button Click="BackClick" Content="Назад" Margin="0,7,0,0" HorizontalAlignment="Center"/>
+	</StackPanel>
+</Window>

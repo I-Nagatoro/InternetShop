@@ -16,6 +16,7 @@
 			<Button Click="UpdateProductClick" Width="315" HorizontalAlignment="Center" Content="Редактировать существующий продукт" FontSize="15" HorizontalContentAlignment="Center"/>
 			<Button Click="DeleteProductClick" Width="315" HorizontalAlignment="Center" Content="Удалить сущесвующий продукт" FontSize="15" HorizontalContentAlignment="Center"/>
 			<Button Click="ShowUpdateOrdersClick" Width="315" HorizontalAlignment="Center" Content="Просмотр и реактирование заказов" FontSize="15" HorizontalContentAlignment="Center"/>
+			<Button Click="ExitClick" Width="100" HorizontalAlignment="Center" Content="Выход" FontSize="15" HorizontalContentAlignment="Center"/>
 		</StackPanel>
 	</DockPanel>
 </Window>

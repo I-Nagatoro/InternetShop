@@ -3,7 +3,9 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using InternetShop.Models;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.InteropServices.Marshalling;
 
@@ -12,7 +14,7 @@ namespace InternetShop;
 public partial class BasketWindow : Window
 {
     public int userId;
-    List<Product_basket> product_list = new List<Product_basket>();
+    private ObservableCollection<Product_basket> product_list = new ObservableCollection<Product_basket>();
     public BasketWindow()
     {
         InitializeComponent();
@@ -50,6 +52,18 @@ public partial class BasketWindow : Window
         BasketList.ItemsSource = null;
         BasketList.ItemsSource = product_list;
         sumprice.Text = SumPrice.ToString();
+        if (product_list.Count!=0)
+        {
+            allCost.IsVisible = true;
+            DoneButton.IsVisible = true;
+            Empty.IsVisible = false;
+        }
+        else
+        {
+            allCost.IsVisible = false;
+            DoneButton.IsVisible = false;
+            Empty.IsVisible = true;
+        }
     }
 
     public void DecreaseQuantity(object sender, RoutedEventArgs e)
@@ -68,6 +82,8 @@ public partial class BasketWindow : Window
             else
             {
                 context.BasketProducts.Remove(product);
+                var delete = product_list.Where(x=>x.ProductId==product.Id);
+                product_list.Remove(product_list.Where(x=>x.ProductId==product.ProductId).FirstOrDefault());
                 context.SaveChanges();
             }
             LoadProducts();

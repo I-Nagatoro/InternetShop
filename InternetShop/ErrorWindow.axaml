@@ -7,6 +7,7 @@
         x:Class="InternetShop.ErrorWindow"
         Title="ErrorWindow">
 	<StackPanel Orientation="Vertical" VerticalAlignment="Center">
-		<TextBlock x:Name="errorMsg" Padding="10" Text="sdf" TextWrapping="Wrap"/>
+		<TextBlock x:Name="errorMsg" HorizontalAlignment="Center" TextWrapping="Wrap" Padding="10" Text="sdf"/>
+	    <Button Content="ОК" Click="CloseClick" HorizontalAlignment="Center"/>
 	</StackPanel>
 </Window>

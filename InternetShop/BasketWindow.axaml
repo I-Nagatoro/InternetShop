@@ -42,13 +42,14 @@
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<StackPanel Orientation="Horizontal">
-				<TextBlock Margin="0,5,0,0" Text="Общая стоимость корзины: "/>
+			<StackPanel Orientation="Horizontal" Name="allCost" IsVisible="False">
+				<TextBlock  Margin="5,5,0,0" Text="Общая стоимость корзины: "/>
 				<TextBlock Margin="0,5,0,0" x:Name="sumprice" Text=""/>
 			</StackPanel>
-			<StackPanel Orientation="Horizontal">
+			<TextBlock Name="Empty" Text="Корзина пуста" HorizontalAlignment="Center" FontSize="20"/>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button Content="Назад" Click="Back" Margin="5" />
-				<Button Content="Оформить заказ" Click="OrderDone" Margin="5"/>
+				<Button Content="Оформить заказ" Click="OrderDone" Margin="5" Name="DoneButton" IsVisible="False"/>
 			</StackPanel>
 		</StackPanel>
 	</DockPanel>

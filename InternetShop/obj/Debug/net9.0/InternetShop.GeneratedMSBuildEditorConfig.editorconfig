@@ -23,38 +23,50 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = InternetShop
-build_property.ProjectDir = C:\Users\demo\Desktop\Demo\InternetShop\InternetShop\
+build_property.ProjectDir = C:\Users\sokol\Source\Repos\InternetShop\InternetShop\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/AdminWindow.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/AccessOrCanselWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/App.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/AdminWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/BasketWindow.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/CatalogWindow.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/BasketWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/ErrorWindow.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/CatalogWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/MainWindow.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/DeleteProductWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/OrderDoneWindow.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/EditOrderWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/OrderWindow.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/ErrorWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/ProductWindow.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/demo/Desktop/Demo/InternetShop/InternetShop/RegistrationWindow.axaml]
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/OrderDoneWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/OrderWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/ProductWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/RegistrationWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/sokol/Source/Repos/InternetShop/InternetShop/ViewOrderWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
